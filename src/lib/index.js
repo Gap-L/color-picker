@@ -70,7 +70,7 @@ const ColorPicker = ({
   const presets = customPresets || DEFAULT_PRESETS;
 
   const [color, setColor] = useState(() => {
-    const initColor = value || defaultValue || "#1677ff";
+    const initColor = value || defaultValue || "";
     return parseColor(initColor);
   });
 
@@ -85,7 +85,7 @@ const ColorPicker = ({
   const [panelStyle, setPanelStyle] = useState({});
 
   useEffect(() => {
-    if (value !== undefined) {
+    if (value !== undefined && value !== "") {
       const newColor = parseColor(value);
       setColor(newColor);
       const rgb = hsvToRgb(newColor.h, newColor.s, newColor.v);

@@ -101,7 +101,7 @@ const ColorInput = ({ hue, saturation, value, alpha, onChange }) => {
         ref={dropdownRef}
         onClick={() => setShowDropdown(!showDropdown)}
       >
-        <span>{mode.charAt(0) + mode.slice(1).toLowerCase()}</span>
+        <span>{mode === "HEX" ? "Hex" : mode}</span>
         <span
           className="arrow"
           style={{

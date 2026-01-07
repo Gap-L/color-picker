@@ -1,6 +1,6 @@
 {
   "name": "gdp-color-picker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Gap-L <13620238719@163.com>",
   "private": false,
   "description": "A custom color picker component compatible with React 16.8",

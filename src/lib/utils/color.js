@@ -120,7 +120,7 @@ export function hexToRgb(hex) {
 }
 
 export function parseColor(color) {
-  if (!color) return { h: 0, s: 1, v: 1, a: 1 };
+  if (!color) return { h: 0, s: 0, v: 0, a: 1 };
 
   if (color.startsWith("#")) {
     const rgb = hexToRgb(color);
