@@ -1,0 +1,50 @@
+{
+  "name": "gdp-color-picker",
+  "version": "1.2.0",
+  "author": "Gap-L <13620238719@163.com>",
+  "private": false,
+  "description": "A custom color picker component compatible with React 16.8",
+  "source": "src/lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "files": [
+    "dist",
+    "src/lib",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build:demo": "react-scripts build",
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --globals react=React",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "microbundle": "^0.15.1",
+    "postcss": "^8.5.6",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-scripts": "3.4.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>下拉备份</title>
+    <g id="登录注册" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="导航815" transform="translate(-1348.000000, -88.000000)" fill-rule="nonzero">
+            <g id="顶部导航备份" transform="translate(0.000000, 60.000000)">
+                <g id="导航栏类目" transform="translate(584.000000, 20.000000)">
+                    <g id="编组-2" transform="translate(728.000000, 4.000000)">
+                        <g id="下拉备份" transform="translate(44.000000, 12.000000) rotate(-360.000000) translate(-44.000000, -12.000000) translate(36.000000, 4.000000)">
+                            <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                            <path d="M13.0750341,5.34788541 C12.9440655,5.21691678 12.7257845,5.21691678 12.5948158,5.34788541 L8.01091405,9.93178717 L3.40518417,5.34788541 C3.27421555,5.21691678 3.05593452,5.21691678 2.92496589,5.34788541 C2.79399727,5.47885403 2.79399727,5.69713506 2.92496589,5.82810369 L7.77080491,10.6521146 C7.90177353,10.7830832 8.12005456,10.7830832 8.25102319,10.6521146 L13.0750341,5.82810369 C13.2060027,5.69713506 13.2060027,5.47885403 13.0750341,5.34788541 Z" id="路径" stroke="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
