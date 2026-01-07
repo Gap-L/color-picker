@@ -56,9 +56,9 @@ const ColorPicker = ({
   showInput = true,
   showColorBoard = true,
   presets: customPresets,
-  tooltipText = "Color Picker",
+  tooltipText = "Color Palette",
   placeholderText = "Please input color",
-  screenPickerTooltip = "屏幕取色",
+  screenPickerTooltip = "Color Picker",
   recommendedTitle = "Recommended",
   recentTitle = "Recent",
   moreText = "More",
@@ -70,11 +70,13 @@ const ColorPicker = ({
   const presets = customPresets || DEFAULT_PRESETS;
 
   const [color, setColor] = useState(() => {
+    if (value === "") return parseColor("#FFFFFF");
     const initColor = value || defaultValue || "";
     return parseColor(initColor);
   });
 
   const [inputValue, setInputValue] = useState(() => {
+    if (value === "") return "";
     const rgb = hsvToRgb(color.h, color.s, color.v);
     return rgbToHex(rgb.r, rgb.g, rgb.b).toUpperCase();
   });
@@ -85,7 +87,10 @@ const ColorPicker = ({
   const [panelStyle, setPanelStyle] = useState({});
 
   useEffect(() => {
-    if (value !== undefined && value !== "") {
+    if (value === "") {
+      setInputValue("");
+      setColor(parseColor("#FFFFFF"));
+    } else if (value !== undefined) {
       const newColor = parseColor(value);
       setColor(newColor);
       const rgb = hsvToRgb(newColor.h, newColor.s, newColor.v);
@@ -136,7 +141,7 @@ const ColorPicker = ({
       const viewportWidth = window.innerWidth;
 
       let top = triggerRect.bottom + window.scrollY + 4;
-      let left = triggerRect.left + window.scrollX;
+      let left = triggerRect.left + window.scrollX + 18;
 
       const spaceBelow = viewportHeight - triggerRect.bottom - 4;
       const spaceAbove = triggerRect.top - 4;
@@ -151,24 +156,24 @@ const ColorPicker = ({
           top = triggerRect.top + window.scrollY - panelHeight - 4;
           // 如果上方也放不下，强制贴顶（可能会遮挡 trigger，但保证在视口内）
           if (top < window.scrollY) {
-             top = window.scrollY + 4;
+            top = window.scrollY + 4;
           }
         } else {
-           // 否则保持在下方，但如果下方空间不足以完全显示，尝试向上调整使其贴底
-           if (top + panelHeight > window.scrollY + viewportHeight) {
-              top = window.scrollY + viewportHeight - panelHeight - 10;
-           }
+          // 否则保持在下方，但如果下方空间不足以完全显示，尝试向上调整使其贴底
+          if (top + panelHeight > window.scrollY + viewportHeight) {
+            top = window.scrollY + viewportHeight - panelHeight - 10;
+          }
         }
       } else {
-         // 下方空间足够，但也要防止意外超出（双重保险）
-         if (top + panelHeight > window.scrollY + viewportHeight) {
-             top = window.scrollY + viewportHeight - panelHeight - 10;
-         }
+        // 下方空间足够，但也要防止意外超出（双重保险）
+        if (top + panelHeight > window.scrollY + viewportHeight) {
+          top = window.scrollY + viewportHeight - panelHeight - 10;
+        }
       }
 
       // 水平方向边界检测
-      if (triggerRect.left + panelRect.width > viewportWidth) {
-        left = viewportWidth - panelRect.width - 10;
+      if (triggerRect.left + 16 + panelRect.width > viewportWidth) {
+        left = window.scrollX + viewportWidth - panelRect.width - 10;
       }
       if (left < 0) left = 0;
 

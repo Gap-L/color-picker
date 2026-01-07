@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import ColorPicker from "./lib";
 
 function App() {
-  const [color, setColor] = useState("#1677ff");
+  const [color, setColor] = useState("");
 
   return (
-    <div style={{ padding: "50px", fontFamily: "Arial, sans-serif", backgroundColor: "#2c3339" }}>
+    <div
+      style={{
+        padding: "50px",
+        fontFamily: "Arial, sans-serif",
+        backgroundColor: "#2c3339",
+      }}
+    >
       <h1>GDP Color Picker Demo</h1>
       <div style={{ marginBottom: "20px" }}>
         <label>Selected Color: </label>

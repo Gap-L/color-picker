@@ -368,10 +368,6 @@
   height: 100%;
 }
 
-.color-picker-input-wrapper input:focus {
-  /* border-color handled by wrapper */
-}
-
 .input-clear-icon {
   display: flex;
   align-items: center;
@@ -433,7 +429,7 @@
   content: "";
   position: absolute;
   top: 100%;
-  left: 20%; 
+  left: 20%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
@@ -494,12 +490,13 @@
   text-align: center;
   position: relative;
   top: 0;
-  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease, top 0.25s ease;
+  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease,
+    top 0.25s ease;
   opacity: 0.85;
 }
 
 .presets-collapse:hover .collapse-arrow {
-  color: #1677ff;
+  color: #2d7fff;
   opacity: 1;
   top: 1px;
 }

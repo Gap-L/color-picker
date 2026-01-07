@@ -164,7 +164,7 @@ const ColorInput = ({ hue, saturation, value, alpha, onChange }) => {
             <span className="hex-prefix">#</span>
             <input
               className="color-input hex"
-              value={localValue.hex ? localValue.hex.replace("#", "") : ""}
+              value={localValue.hex ? localValue.hex.replace("#", "").toUpperCase() : ""}
               onChange={handleHexChange}
             />
           </div>
@@ -219,9 +219,9 @@ const ColorInput = ({ hue, saturation, value, alpha, onChange }) => {
             />
           </>
         )}
-        <div className="color-input alpha-display">
+        {/* <div className="color-input alpha-display">
           {Math.round(alpha * 100)}%
-        </div>
+        </div> */}
       </div>
     </div>
   );
